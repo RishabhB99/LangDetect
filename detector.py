@@ -2,7 +2,7 @@ import sys
 from utilities import *
 
 
-def accuracy(input_set,output_set,dataset_size,check,detector):
+def accuracy(input_set,output_set,dataset_size,check,detector):  #Calculates accuracy of the given detector on the given dataset
 	correct=0
 	total=0.0
 	for itr in range(dataset_size):
