@@ -9,7 +9,7 @@ language_set = {"af", "ar", "bg", "bn", "ca", "cs", "cy", "da", "de", "el", "en"
 "pt", "ro", "ru", "sk", "sl", "so", "sq", "sv", "sw", "ta", "te", "th", "tl", "tr", "uk", "ur", "vi", "zh-cn", "zh-tw"}
 
 	
-def clean(text):
+def clean(text): #cleans text of unnecessary elements
 	text = re.sub(r'^https?:\/\/.*[\r\n]*', '', text, flags=re.MULTILINE)
 	result = ''.join(i for i in text if not i.isdigit() )
 	result = result.replace('"', '')
@@ -18,6 +18,7 @@ def clean(text):
 
 	return result
 
+#classes corresponding to different detectors
 class CLD3():
 	def detect(text):
 		prediction, confidence, isreliable, proportion = cld3.get_language(text)
